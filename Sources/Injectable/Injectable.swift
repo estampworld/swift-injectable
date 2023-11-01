@@ -1,6 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
+import SwiftUI
 import Combine
 
 public protocol InjectionKey {
@@ -42,4 +43,15 @@ public struct Injected<T> {
     public init(_ keyPath: WritableKeyPath<InjectedValues, T>) {
         self.keyPath = keyPath
     }
+}
+
+@available(iOS 15.0, *)
+extension View {
+
+    public func dependecy<V>(_ keyPath: WritableKeyPath<InjectedValues, V>, _ value: V) -> some View {
+        self.task {
+            InjectedValues[keyPath] = value
+        }
+    }
+
 }
