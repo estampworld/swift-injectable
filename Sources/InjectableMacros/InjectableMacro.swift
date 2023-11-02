@@ -29,7 +29,6 @@ public enum InjectableMacro: PeerMacro {
     }
 }
 
-/*
 public enum InjectableValuesMacro: MemberMacro {
 
     public static func expansion(of node: SwiftSyntax.AttributeSyntax, providingMembersOf declaration: some SwiftSyntax.DeclGroupSyntax, in context: some SwiftSyntaxMacros.MacroExpansionContext) throws -> [SwiftSyntax.DeclSyntax] {
@@ -49,11 +48,11 @@ public enum InjectableValuesMacro: MemberMacro {
 
     }
 }
-*/
 
 @main
 struct InjectablePlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
         InjectableMacro.self,
+        InjectableValuesMacro.self
     ]
 }

@@ -5,7 +5,7 @@ import PackageDescription
 import CompilerPluginSupport
 
 let package = Package(
-    name: "Injectable",
+    name: "swift-injectable",
     platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13)],
     products: [
         .library(
@@ -32,6 +32,10 @@ let package = Package(
         .executableTarget(name: "InjectableClient", dependencies: ["Injectable"]),
         .testTarget(
             name: "InjectableTests",
-            dependencies: ["Injectable"]),
+            dependencies: [
+                "Injectable",
+                .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax")
+            ]
+        ),
     ]
 )

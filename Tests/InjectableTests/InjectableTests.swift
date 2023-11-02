@@ -1,7 +1,7 @@
 import XCTest
 @testable import Injectable
 
-final class swift_injectableTests: XCTestCase {
+final class InjectableTests: XCTestCase {
     
     func test_AccessService() throws {
         @Injected(\.testService) var testService
