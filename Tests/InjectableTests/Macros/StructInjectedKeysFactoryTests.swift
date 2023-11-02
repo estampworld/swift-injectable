@@ -12,7 +12,7 @@ final class StructInjectedKeysFactoryTests: XCTestCase {
         let type = TypeSyntax(stringLiteral: "TestService")
         let defaultImplemenation = TokenSyntax(stringLiteral: "TestServiceImpl")
 
-        let result = StructInjectedKeysFactory().structDeclaration(name: name, type: type, defaultImplentaionName: defaultImplemenation)
+        let result = sut.structDeclaration(name: name, type: type, defaultImplentaionName: defaultImplemenation)
         assertBuildResult(
             result,
             """
