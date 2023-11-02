@@ -19,7 +19,7 @@ struct StructInjectedKeysFactory {
             },
             memberBlockBuilder: {
 
-                VariableDeclSyntax.init(
+                VariableDeclSyntax(
                     modifiers: [.init(name: TokenSyntax(stringLiteral: "static")) ],
                     Keyword.var,
                     name: .init(stringLiteral: "currentValue"),

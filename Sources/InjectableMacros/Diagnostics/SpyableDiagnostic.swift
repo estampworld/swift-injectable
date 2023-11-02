@@ -1,12 +1,13 @@
 import SwiftDiagnostics
 
 enum InjectableDiagnostic: String, DiagnosticMessage, Error {
-    case onlyApplicableToProtocol, missingParameter
+    case onlyApplicableToProtocol, missingParameter, missingProtocolName
 
     var message: String {
         switch self {
         case .onlyApplicableToProtocol: "'@Injectable' can only be applied to a 'protocol'"
         case .missingParameter: "Paramter for default value is missing"
+        case .missingProtocolName: "Paramter for default value is missing"
         }
     }
     
@@ -18,6 +19,7 @@ enum InjectableDiagnostic: String, DiagnosticMessage, Error {
         switch self {
         case .onlyApplicableToProtocol: .error
         case .missingParameter: .error
+        case .missingProtocolName: .error
         }
     }
 }

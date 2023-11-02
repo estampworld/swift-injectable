@@ -37,13 +37,10 @@ public enum InjectableValuesMacro: MemberMacro {
             throw InjectableDiagnostic.onlyApplicableToProtocol
         }
 
+        let varDec = VarInjectableValuesFactory().varDeclaration(protocolName: protocolName)
+
         return [
-"""
-    var \(raw: protocolName.capitalizedSentence): (any \(raw: protocolName)) {
-        get { return Self[\(raw: protocolName)InjectionKey.self] }
-        set { Self[\(raw: protocolName)InjectionKey.self] = newValue }
-    }
-"""
+            DeclSyntax(varDec)
         ]
 
     }
