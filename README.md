@@ -35,4 +35,21 @@ struct PokemonServiceAPI: PokeService {
 extension InjectedValues { }
 ```
 
-### Setup
+With a SwiftModifier
+
+```
+ SwiftUI.DisplayView()
+    .dependecy(\.service, ServiceAPI() )
+```
+### Getting dependencies
+
+```
+@Injected(\.Service) var service
+```
+
+
+## Contact
+
+- Eduardo Irias
+- Twitter: @eduardo22i
+- GitHub: eduardo22i
