@@ -2,7 +2,10 @@
 
 A Swift library for easy dependecy injection.
 
-Using Swift Macros, SwiftInjectable allows you to easily make inject. Add the @Injectable(default: DefaultDependency.self) to create an Injection key.
+Using Swift Macros, SwiftInjectable allows you to easily make inject. Add the `@Injectable(default: DefaultDependency.self)` to create an Injection key.
+
+This is based on SwiftLee blog 
+https://www.avanderlee.com/swift/dependency-injection/
 
 ## Installation
 
