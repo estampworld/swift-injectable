@@ -8,7 +8,7 @@ Using Swift Macros, SwiftInjectable allows you to easily make inject. Add the @I
 
 ```
 dependencies: [
-    .package(url: "https://github.com/estampworld/swift-injectable.git", from: "1.0.0")
+    .package(url: "https://github.com/estampworld/swift-injectable.git", from: "0.0.1")
 ]
 ```
 
