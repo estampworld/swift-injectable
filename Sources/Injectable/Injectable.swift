@@ -56,3 +56,18 @@ extension View {
     }
 
 }
+
+@attached(peer, names: suffixed(InjectionKey))
+public macro Injectable<T>(default: T.Type) = #externalMacro(
+    module: "InjectableMacros",
+    type: "InjectableMacro"
+)
+
+@attached(member, names: arbitrary)
+public macro InjectableValues<T>(name: T.Type) = #externalMacro(
+    module: "InjectableMacros",
+    type: "InjectableValuesMacro"
+)
+
+@freestanding(expression)
+public macro stringify<T>(_ value: T) -> (T, String) = #externalMacro(module: "InjectableMacros", type: "StringifyMacro")
