@@ -46,6 +46,7 @@ public struct Injected<T> {
 }
 
 @available(iOS 15.0, *)
+@available(macOS 12.0, *)
 extension View {
 
     public func dependecy<V>(_ keyPath: WritableKeyPath<InjectedValues, V>, _ value: V) -> some View {
